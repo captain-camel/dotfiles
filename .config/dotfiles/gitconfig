@@ -1,2 +1,8 @@
 [status]
 	showUntrackedFiles = no
+[hook "scripts"]
+	event = post-commit
+	event = post-checkout
+	event = post-merge
+	event = post-rewrite
+	command = ~/.config/dotfiles/scripts.sh

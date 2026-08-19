@@ -1,0 +1,5 @@
+[user]
+	email = cameron.delong@icloud.com
+	name = Cameron Delong
+[alias]
+	dots = !git --git-dir=\"$XDG_DATA_HOME/dotfiles/repo.git\" --work-tree=\"$HOME\"

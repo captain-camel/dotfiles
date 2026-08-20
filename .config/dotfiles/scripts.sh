@@ -13,7 +13,7 @@ for script in "$HOME/.scripts/*.sh"; do
 
   current=$({
     cat "$script"
-    sed -En 's/^#: use (.*)/\1/p' "$script" | while read -r; do
+    sed -En 's/^# use: (.*)/\1/p' "$script" | while read -r; do
       cat "$d" 2>/dev/null
     done
   } | shasum -a 256 | awk '{print $1}')

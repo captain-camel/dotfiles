@@ -1,3 +1,4 @@
+# vim: set ft=gitconfig:
 [status]
 	showUntrackedFiles = no
 [hook "scripts"]

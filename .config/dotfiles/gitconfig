@@ -6,4 +6,4 @@
 	event = post-checkout
 	event = post-merge
 	event = post-rewrite
-	command = ~/.config/dotfiles/scripts.sh
+	command = sh ~/.config/dotfiles/scripts.sh

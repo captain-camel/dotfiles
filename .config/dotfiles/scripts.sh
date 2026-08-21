@@ -5,7 +5,7 @@ set -eu
 readonly STATE_DIR="$HOME/.local/state/dotfiles/hashes/scripts"
 mkdir -p "$STATE_DIR"
 
-for script in "$HOME"/.scripts/*.sh; do
+for script in "$HOME/.scripts"/*.sh; do
   [ -e "$script" ] || continue
 
   key=$(printf '%s' "$script" | shasum -a 256 | awk '{print $1}')
@@ -14,6 +14,10 @@ for script in "$HOME"/.scripts/*.sh; do
   current=$({
     cat "$script"
     sed -En 's/^# use: (.*)/\1/p' "$script" | while read -r dep; do
+      case "$dep" in
+        ('~/'*) dep="$HOME/${dep#'~/'}" ;;
+      esac
+
       cat "$dep" 2>/dev/null
     done
   } | shasum -a 256 | awk '{print $1}')

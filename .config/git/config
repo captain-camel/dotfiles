@@ -4,4 +4,4 @@
 [alias]
 	dots = !git --git-dir=\"$XDG_DATA_HOME/dotfiles/repo.git\" --work-tree=\"$HOME\"
 [includeIf "gitdir:~/.local/share/dotfiles/repo.git"]
-	path = ~/.config/dotfiles/gitconfig
+	path = ~/.config/dotfiles/git/config

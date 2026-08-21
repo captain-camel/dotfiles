@@ -20,6 +20,8 @@ for script in "$HOME"/.scripts/*.sh; do
   last=$(cat "$state_file" 2>/dev/null || echo "")
 
   if [ "$current" != "$last" ]; then
+    printf '[dotfiles] running %s\n' "$(basename "$script")" >&2
+
     sh -eu "$script" && echo "$current" >"$state_file"
   fi
 done

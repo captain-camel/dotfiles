@@ -1,5 +1,4 @@
 # vim: set ft=ruby:
-
 brew "mas"
 brew "mise"
 brew "neovim"
@@ -11,5 +10,4 @@ mas "uBlock Origin Lite", id: 6745342698
 mas "WireGuard", id: 1451685025
 
 # neovim
-brew "fd"
-brew "tree-sitter-cli"
+instance_eval(File.read(File.expand_path("~/.config/nvim/Brewfile")))
